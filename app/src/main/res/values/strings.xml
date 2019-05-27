@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Ex01Widget</string>
+
+    <!--문자열 리소스 : 지금은 xml로 String객체를 생성하였다. 정도로 생각해도 됨. -->
+    <string name="my_text">Hello android</string>
+</resources>

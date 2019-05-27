@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 본인 안에 있는 Child View들을 모두 [수직/수평 - orientation속성으로 지정 ]으로 배치하는 ViewGroup 레이아웃 클래스-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#DDEEEE"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- 뷰크기, 글씨, 글씨크기, 글씨색상, 배경색, 패딩, 마진-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:textColor="#0000ff"
+        android:background="#ffff00"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- visibility속성 : [visible, invisible, gone] 아래 배경이미지지 후 작성. 차이점 확인하기 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 배경이미지 : res폴더>>drawable폴더 안에 koala.jpg파일 복사붙이기. (주의! 이미지파일이름에 대문자나 특수문자 안됨. 숫자 첫글자 안됨)-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="asdfasdfa"
+        android:background="@drawable/koala"/>
+
+    <!-- 정렬 -->
+    <!-- gravity : View안에 내용물(Content)의 위치 정렬-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="gravity"
+        android:gravity="right"
+        android:background="#ffffff"
+        android:padding="8dp"/>
+
+    <!-- layout_gravity속성 : View자체의 위치 정렬 - 레이아웃의 종류에 따라 방법이 다소 상이 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nice!!"
+        android:background="#00ff00"
+        android:padding="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <!--긴글 출력 및 라인수 지정과 ...표시하기[ 3가지 중 선택 : end, start, middle]-실제로는 end만 되는 경우가 많음(디바이스마다 다름) -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요. 긴 글씨의 경우 한줄에 출력할 때 칸이 모자를 수 있습니다. 그럼 자동 줄바꿈이 일어납니다."
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <!--autoLink 속성 : 잘 사용되지 않음. 웹이 아리라서 글씨의 링크를 좋은 UI/UX로 보지않음. 버튼이나 이미지를 클릭하는 방법 권장-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:text="http://www.naver.com"
+        android:typeface="serif"/>
+    <!--typeface는 에뮬레이터에서는 잘 안됨. 실디바이스는 되는 경우 많음-->
+
+    <!-- xml리소스(strings.xml) 로 텍스트 설정하기 : res폴더>>values폴더>>strings.xml파일 수정-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_text"/>
+
+</LinearLayout>
